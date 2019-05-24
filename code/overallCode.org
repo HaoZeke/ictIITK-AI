@@ -473,6 +473,28 @@ Well the code is basically the same, this example basically shows the fact that
 
 #+INCLUDE: "./mlaipack01/MLAIPractical06.py" src python
 
+We can also get some summary statistics simply by using inbuilt functions like
+in the program shown below:
+#+INCLUDE: "./mlaipack01/MLAIPractical06.py" src python
+* Visualizing
+** Matplotlib
+The most basic way of visualizing things is simply using the MATLAB-esque
+~matplotlib~ library. Of course, ~seaborn~ with its more ~ggplot~ like syntax is
+better, but, baby steps. Consider the following program:
+#+INCLUDE: "./mlaipack01/MLAIPractical08.py" src python
+Now actually this will NOT run in bash. This is because the default backend for
+~matplotlib~ when run from bash is AGG, which is not right. We need to set the
+following(Adapted from [[https://stackoverflow.com/questions/4930524/how-can-i-set-the-backend-in-matplotlib-in-python][here]]):
+#+BEGIN_SRC bash
+# ValueError: Key backend: Unrecognized backend string 'gtk': valid strings are ['GTK3Agg', 'GTK3Cairo', 'MacOSX', 'nbAgg', 'Qt4Agg', 'Qt4Cairo', 'Qt5Agg', 'Qt5Cairo', 'TkAgg', 'TkCairo', 'WebAgg', 'WX', 'WXAgg', 'WXCairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']
+export MPLBACKEND=Qt5Cairo
+cd $ProjectRoot/code/
+poetry add pycairo pyqt5
+#+END_SRC
+Now we can run the code, and get the following beautiful image along with some
+random text (well actually, data values we asked for)
+[[file:images/e08_output.png][Regression line coefficients]]
+[[file:images/e08_regressionLine.png][Figure showing the regression line]]
 * Task List
 ** TODO Replace the results with images, the entire damn file gets printed
 Must figure out some way to handle that
