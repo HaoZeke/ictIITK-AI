@@ -1,0 +1,7 @@
+#+TITLE: readme
+
+This contains my work and notes pertaining to the AI class I took over the
+summer at IITK (May-June).
+
+* License
+Well, this is a paid course, but these are my notes, so, yay MIT.
