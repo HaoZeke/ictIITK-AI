@@ -391,3 +391,5 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+/code/overallCode.tex~
+/code/overallCode.tex
