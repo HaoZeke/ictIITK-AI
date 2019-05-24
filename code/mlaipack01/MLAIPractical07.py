@@ -28,7 +28,7 @@ print(dataframe.dtypes)
 print("-*-"*20)
 
 pandas.set_option('precision',2)
-print("description=\n", dataframe.describe)
+print("description=\n", dataframe.describe())
 print("-*-"*20)
 
 class_counts = dataframe.groupby('class').size()
