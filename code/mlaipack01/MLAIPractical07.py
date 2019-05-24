@@ -19,6 +19,7 @@ hnames = [
 
 dataframe = pandas.read_csv(ftmp, names=hnames)
 
+# The default is 5 rows
 print(dataframe.head(20))
 print("-*-"*20)
 print("Shape", dataframe.shape)
@@ -26,7 +27,10 @@ print("-*-"*20)
 print(dataframe.dtypes)
 print("-*-"*20)
 
-print('\n')
+pandas.set_option('precision',2)
+print("description=\n", dataframe.describe)
+print("-*-"*20)
+
 class_counts = dataframe.groupby('class').size()
 print(class_counts)
 print("-#-"*20)
