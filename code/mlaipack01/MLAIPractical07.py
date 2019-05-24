@@ -33,4 +33,8 @@ print("-*-"*20)
 
 class_counts = dataframe.groupby('class').size()
 print(class_counts)
+print("-*-"*20)
+
+correlations = dataframe.corr(method="pearson")
+print(correlations)
 print("-#-"*20)
